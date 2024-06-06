@@ -73,8 +73,13 @@ app.post("/cadastrar/consulta", (req, res)=>{
     const {medico, cpf, data, horario, } = req.body
     console.log(req.body)
 
-    var description = "consulta Lucas, email: lucasfcaje13@gmail.com " + medico
-    AppointmentService.Create("lucas", "lucasfcaje13@gmail.com", description, cpf, data, horario);
+    try {
+        var description = "consulta Lucas, email: lucasfcaje13@gmail.com " + medico
+        AppointmentService.Create("lucas", "lucasfcaje13@gmail.com", description, cpf, data, horario);
+        res.render("cadastrarConsulta.ejs", {medicos: []})
+    } catch (error) {
+        res.send("Erro no cadastro de sua consulta")
+    }
 
 })
 

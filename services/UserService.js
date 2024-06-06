@@ -1,7 +1,6 @@
 
 const mongoose = require("mongoose");
 const userModel = require("../model/Usuario");
-const { where } = require("sequelize");
 const newUser = mongoose.model("newUser", userModel)
 
 class Usuario{
@@ -27,6 +26,9 @@ class Usuario{
 
         try {
             const usuario = await newUser.find({email: this.email})
+            const teste = await newUser.find()
+            console.log(teste)
+
             if (usuario != []) {
                 if(usuario[0].senha == this.senha){
                     return true
