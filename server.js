@@ -9,7 +9,7 @@ app.listen(8080, (error) => {
     if (error) {
         console.log("Erro na inicializacao")
     } else {
-        console.log("SERVER ON")
+        console.log("SERVER ON: http://localhost:8080/index")
     }
 });
 

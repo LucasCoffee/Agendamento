@@ -9,15 +9,10 @@ app.get("/cadastro", (req, res) => {
 });
 
 app.post("/create", async (req, res) => {
-
+    var {name, email, description, cpf, date, time} = req.body
     var status = await AppointmentService.Create(
-        req.body.name,
-        req.body.email,
-        req.body.description,
-        req.body.cpf,
-        req.body.date,
-        req.body.time
-    );
+        name, email, description, cpf, date, time
+    )
 
     if (status) {
         res.redirect("/cadastro")

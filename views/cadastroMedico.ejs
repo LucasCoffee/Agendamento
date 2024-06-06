@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Cadastro de Médico</title>
+  <!-- Bootstrap CSS -->
+  <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+</head>
+<body>
+
+<div class="container mt-5">
+  <div class="row justify-content-center">
+    <div class="col-md-6">
+      <!-- Formulário para cadastro do médico -->
+      <div class="card">
+        <div class="card-header">
+          <h3 class="text-center">Cadastro de Médico</h3>
+        </div>
+        <div class="card-body">
+          <form action="/medico/cadastrar" method="POST">
+            <div class="form-group">
+              <label for="cpf">CPF</label>
+              <input type="text" class="form-control" id="cpf" name="cpf" placeholder="Digite o CPF">
+            </div>
+            <div class="form-group">
+              <label for="nome">Nome</label>
+              <input type="text" class="form-control" id="nome" name="nome" placeholder="Digite o Nome">
+            </div>
+            <div class="form-group">
+                <label for="cidade">Cidade</label>
+                <input type="text" class="form-control" id="cidade" name="cidade" required>
+              </div>
+              <div class="form-group">
+                <label for="email">E-mail</label>
+                <input type="email" class="form-control" id="email" name="email" required>
+              </div>
+              <div class="form-group">
+                <label for="telefone">Número de Telefone</label>
+                <input type="tel" class="form-control" id="telefone" name="telefone" required>
+              </div>
+            <div class="form-group">
+              <label for="categoria">Categoria</label>
+              <select class="form-control" id="categoria" name="categoria">
+                <option value="clinico geral">Clínico Geral</option>
+                <option value="pediatra">Pediatra</option>
+                <option value="cardiologista">Cardiologista</option>
+                <!-- Adicione outras opções conforme necessário -->
+              </select>
+            </div>
+            <div class="form-group">
+              <label for="clinica">Nome da Clínica</label>
+              <input type="text" class="form-control" id="clinica" name="clinica" placeholder="Digite o Nome da Clínica">
+            </div>
+            <button type="submit" class="btn btn-primary btn-block">Cadastrar Médico</button>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Bootstrap JS, Popper.js, and jQuery -->
+<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
+</html>

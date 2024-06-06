@@ -2,17 +2,22 @@ const bodyParser = require("body-parser");
 const AppointmentService = require("./services/AppointmentService");
 const app = require("./server")
 const express = require("express")
-//controllers
-const ControllerEvent = require("./Controller/ControllerEvent");
-const ControllerConfig = require("./Controller/ControllerConfig");
-app.use("/", ControllerEvent)
-app.use("/", ControllerConfig)
-
 
 app.use(express.static("public"));
 app.use(bodyParser.urlencoded({extended: false}));
 app.use(bodyParser.json());
 app.set("view engine", "ejs");
+
+//controllers
+const ControllerEvent = require("./Controller/ControllerEvent");
+const ControllerConfig = require("./Controller/ControllerConfig");
+const ControllerUsuario = require("./Controller/ControllerUser");
+app.use("/usuario", ControllerUsuario)
+app.use("/", ControllerEvent)
+app.use("/", ControllerConfig)
+
+
+
 
 
 app.get("/", (req, res) => {
